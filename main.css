@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&family=Piazzolla:wght@300&display=swap');
+
+/* Global styles */
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-family: "Piazzolla";
+    font-size: 12px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: #ffffff;
+    background: #000000;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(12, 151, 24);
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    font-size: 1.4rem;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* header */
+
+header{
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.container{
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.nav-brand{
+    width: 7rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+}
+
+.line1{
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: linear-gradient(
+        100deg, 
+        rgb(0, 0, 0) 0%,
+        rgb(12, 151, 24) 100%
+    );
+}
+
+.line2{
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: linear-gradient(
+        100deg, 
+        rgb(0, 0, 0) 0%,
+        rgb(12, 151, 24) 100%
+    );
+}
+
+.line3{
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: linear-gradient(
+        100deg, 
+        rgb(0, 0, 0) 0%,
+        rgb(12, 151, 24) 100%
+    );
+}
+
+.burger-menu-icon{
+    cursor: pointer;
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: #00000000;
+    opacity: 1;
+    padding: 1.5rem;
+    border-radius: 50% 50% 50% 50%;
+}
+.profile-pic{
+    height: 13rem;
+    width: auto;
+    border-radius: 50%;
+    display: block;
+    margin: 3rem 2rem;
+}
+
+.caption{
+    display: block;
+}
+
+.nav-list {
+    width: 24rem;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: start;
+    z-index: 998;
+    transition: all 650ms ease-in-out;
+}
+
+.nav-list.active{
+    right: 0;
+}
+
+.nav-item{
+    margin: 2rem 0;
+}
+
+.nav-link {
+    opacity: 1;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 1.5px;
+}
+
+.nav-link:hover{
+    color: rgb(12, 151, 24);
+}
+
+.toggle{
+    background: none;
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+    margin-left: 0px;
+}
+
+@keyframes navLink{
+    from{
+        opacity: 0;
+        transform: translate(50px)
+    }
+    to{
+        opacity: 1;
+        transform: translate(0px)
+    }
+}
+/* landing page */
+.landing-page{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+        150deg,
+        rgba(226, 229, 233, 0.555) 0%,
+        rgba(0, 0, 0, 0.76) 100%
+    ),
+    url("images/landing-page.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.main-message h1{
+    width: 100%;
+    max-width: 60.5rem;
+    text-transform: uppercase;
+    position: absolute;
+    letter-spacing: 1.2rem;
+    font-size: 3.5rem;
+    font-family: "Piazzolla";
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40), blink 1s ease-in-out 2s infinite;
+    margin: auto;
+    border-right: 4px solid rgba(255, 255, 255, 1);
+}
+
+.main-message h2{
+    width: 100%;
+    max-width: 100rem;
+    text-transform: uppercase;
+    position: absolute;
+    letter-spacing: 1rem;
+    font-size: 1.8rem;
+    font-family: "Changa";
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: fade 7s;
+    margin: auto;
+    color: #ffffff;
+}
+
+@keyframes typing{
+    0%{
+        width: 0ch;
+        color: rgb(255, 255, 255);
+    }
+    100%{
+        width: 40ch;
+    }
+}
+
+@keyframes blink{
+    from{
+        border-right: 4px solid rgba(255, 255, 255, 0);
+    }
+    to{
+        border-right: 4px solid rgb(255, 255, 255);
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.intro-btn{
+    width: 100%;
+    max-width: 60rem;
+    text-transform: uppercase;
+    position: absolute;
+    letter-spacing: 1rem;
+    font-size: 1rem;
+    font-family: "Changa";
+    left: 50%;
+    top: 76%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    margin: 0 100px;
+    background: rgba(255, 255, 255, 0.774);
+    border-radius: .75rem;
+    color: #000000;
+    padding: .5rem 2rem;
+    display: inline-block;
+    transition: background-color 650ms;
+    letter-spacing: 2px;
+}
+
+.btn:hover{
+    color: #ffffff;
+    background-color: rgb(12, 151, 24);
+}
+
+.scroll-down i{
+    width: 5%;
+    position: absolute;
+    left: 50%;
+    top: 76%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: center;
+    color: #fafafa;
+    transition: color 650ms;
+    font-size: 4rem;
+}
+
+.scroll-down i:hover{
+    color: rgb(12, 151, 24);
+}
+
+/* about page */
+.about{
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    background: url("images/eddy1.png");
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-size: 10rem;
+    background-position-x: 106.5rem;
+    background-position-y: 41.25rem;
+    position: relative;
+}
+
+.about .container{
+    display: column;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.about-img img{
+    height: 15rem;
+    width: auto;
+    border-radius: 50%;
+    margin: 1.5% 0% 0% 43%;
+    box-shadow: 0 15px 30px 0 rgb(12, 151, 24);
+}
+
+.about-text-box{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+.about-text-box h2{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    margin: 0% 0% 0% 0%;
+}
+
+.about-text-box p{
+    font-family: "Changa";
+    font-size: 1.4rem;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    direction: column;
+}
+
+hr{
+    margin: 4rem 0;
+    background: linear-gradient(
+        to right,
+        rgba(12,151,24,1) 0%,
+        rgba(255,255,255,1) 100%
+    );
+    border: 0;
+    height: 1px;
+}
+
+/* Projects page */
+.projects{
+    padding: 3rem 0;
+    min-height: 100vh;
+    max-width: 100rem;
+    margin: auto;
+}
+
+.title-heading{
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.title-heading h2{
+    font-size: 3rem;
+    margin: 0.5rem 0 0 0;
+    background: -webkit-linear-gradient(rgb(255, 255, 255), rgba(255,255,255,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.has-margin-right{
+    margin: 0 5rem 0 0;
+}
+
+.has-margin-left{
+    margin: 0 0 0 5rem;
+}
+
+.project-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1.45rem 5rem 1.45rem;
+}
+
+.project-img{
+    flex: 1;
+}
+
+.project-description{
+    flex: 1;
+}
+
+.project-description h2{
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: grey;
+    background: -webkit-linear-gradient(rgb(41, 41, 41), rgba(255,255,255,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-img h3{
+    font-size: 1.5rem;
+    background: -webkit-linear-gradient(rgb(12, 151, 24), rgb(255, 255, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.project-description p{
+    font-family: "Piazzolla";
+    font-size: 1.5rem;
+}
+
+.project-link{
+    display: inline-block;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+}
